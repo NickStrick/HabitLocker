@@ -2,7 +2,8 @@ import React from 'react';
 import './NavBar.scss';
 import logo from '../../logo.svg';
 
-const NavBar = () => {
+const NavBar = (props) => {
+
 
     return (
         <div className="NavBar">
