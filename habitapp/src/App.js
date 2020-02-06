@@ -14,7 +14,9 @@ function App() {
       <NavBelt />
       <div className='container'>
         <div className='sidegap'></div>
-        <Route exact path='/' render={props => <Home {...props} />} />
+        <div className='page-content'>
+          <Route exact path='/' render={props => <Home {...props} />} />
+        </div>
       </div>
     </div>
   );
