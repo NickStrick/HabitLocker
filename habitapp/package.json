@@ -18,6 +18,10 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "bugs": {
+    "url": "https://github.com/NickStrick/HabitLocker/issues"
+  },
+  "homepage": "https://github.com/NickStrick/HabitLocker/tree/master/habitapp",
   "eslintConfig": {
     "extends": "react-app"
   },
