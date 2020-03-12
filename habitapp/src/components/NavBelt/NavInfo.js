@@ -5,7 +5,11 @@ const NavInfo = (props) => {
 
     return (
         <div className="nav-info">
-
+            {props.items.map((item) => {
+                return (
+                    <p>{item}</p>
+                )
+            })}
         </div>
     );
 }
