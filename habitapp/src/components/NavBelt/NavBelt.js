@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './NavBelt.scss';
+import NavInfo from './NavInfo.js';
 
 const NavBelt = () => {
 
@@ -27,12 +28,29 @@ const NavBelt = () => {
         }
     });
 
+
+    let dailysections = ['carrer', 'personal', 'relation', 'iterrelation', 'foods']
+
     return (
         <div className={`NavBelt ${pinText}`}>
-            <h2>Planning</h2>
-            <h2>Daily</h2>
-            <h2>Monthly</h2>
-            <h2>Custom</h2>
+            <div className='category'>
+                <h2>Planning</h2>
+                <div className='section'>
+                    <NavInfo items={dailysections} />
+                </div>
+            </div>
+            <div className='category'>
+                <h2>Daily</h2>
+                <div className='section'></div>
+            </div>
+            <div className='category'>
+                <h2>Monthly</h2>
+                <div className='section'></div>
+            </div>
+            <div className='category'>
+                <h2>Custom</h2>
+                <div className='section'></div>
+            </div>
         </div>
     );
 }
