@@ -5,7 +5,7 @@ exports.up = function (knex) {
 
         tbl.string('title', 255);
         tbl.string('content', 255)
-        tbl.varchar('section')
+        tbl.integer('section')
             .notNullable()
             .references('id')
             .inTable('sections')
