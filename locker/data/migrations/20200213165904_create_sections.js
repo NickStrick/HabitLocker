@@ -4,7 +4,7 @@ exports.up = function (knex) {
         tbl.increments();
 
         tbl.string('name', 255).notNullable().unique();
-        tbl.varchar('category')
+        tbl.integer('category')
             .notNullable()
             .references('id')
             .inTable('categories')
