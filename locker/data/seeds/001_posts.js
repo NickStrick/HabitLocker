@@ -1,13 +1,35 @@
 
-exports.seed = function(knex) {
-  // Deletes ALL existing entries
-  return knex('table_name').del()
+exports.seed = async function (knex, Promise) {
+
+  return knex
+    .raw("TRUNCATE TABLE users RESTART IDENTITY CASCADE")
     .then(function () {
-      // Inserts seed entries
-      return knex('table_name').insert([
-        {id: 1, colName: 'rowValue1'},
-        {id: 2, colName: 'rowValue2'},
-        {id: 3, colName: 'rowValue3'}
+      return knex("users").insert([
+        {
+          title: 'rocket leauge',
+          description: ' this is a paracgraph from a post about rocket leauge and ',
+          section: 1
+        },
+        {
+          title: 'rocket leauge',
+          description: ' this is a paracgraph from a post about rocket leauge and ',
+          section: 1
+        },
+        {
+          title: 'rocket leauge',
+          description: ' this is a paracgraph from a post about rocket leauge and ',
+          section: 1
+        },
+        {
+          title: 'rocket leauge',
+          description: ' this is a paracgraph from a post about rocket leauge and ',
+          section: 1
+        },
+        {
+          title: 'rocket leauge',
+          description: ' this is a paracgraph from a post about rocket leauge and ',
+          section: 1
+        }
       ]);
     });
 };
