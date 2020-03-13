@@ -7,7 +7,17 @@ exports.seed = async function (knex, Promise) {
       return knex("users").insert([
         {
           name: 'Planning'
+        },
+        {
+          name: 'Daily'
+        },
+        {
+          name: 'Monthly'
+        },
+        {
+          name: 'Custom'
         }
+
       ]);
     });
 };
