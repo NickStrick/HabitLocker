@@ -2,9 +2,11 @@ const router = require("express").Router();
 
 const db = require("./posts-model.js");
 
+module.exports = router;
+
 //Get All Posts.
 router.get("/", (req, res) => {
-    db.getAllPosts()
+    db.getPosts()
         .then(posts => {
             if (posts.length > 0) {
                 res.status(200).json(posts)
@@ -13,6 +15,6 @@ router.get("/", (req, res) => {
             }
         })
         .catch(err => {
-            res.status(500).json(err.message)
+            res.status(500).json(err)
         })
 });
