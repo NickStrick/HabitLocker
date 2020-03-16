@@ -28,7 +28,7 @@ exports.seed = async function (knex, Promise) {
         {
           title: 'rocket leauge',
           content: ' this is a paracgraph from a post about rocket leauge and ',
-          section: 1
+          section: 2
         }
       ]);
     });
