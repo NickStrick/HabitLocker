@@ -1,7 +1,8 @@
 const db = require('../../../data/dbConfig.js');
 
 module.exports = {
-    getPosts
+    getPosts,
+    getPostsBySection
 }
 
 function getPosts(id) {
@@ -14,4 +15,11 @@ function getPosts(id) {
     }
 
     return query;
+}
+
+function getPostsBySection(id) {
+    let query = db('posts');
+
+    return query
+        .where('section', id)
 }
