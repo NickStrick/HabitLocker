@@ -6,16 +6,20 @@ exports.seed = async function (knex, Promise) {
     .then(function () {
       return knex("categories").insert([
         {
-          name: 'Planning'
+          name: 'Planning',
+          user_id: 1
         },
         {
-          name: 'Daily'
+          name: 'Daily',
+          user_id: 1
         },
         {
-          name: 'Monthly'
+          name: 'Monthly',
+          user_id: 1
         },
         {
-          name: 'Custom'
+          name: 'Custom',
+          user_id: 1
         }
 
       ]);
