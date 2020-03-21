@@ -4,6 +4,7 @@ module.exports = {
     getCategoriesByUser,
     add,
     update,
+    remove
 }
 
 function getCategoriesByUser(id) {
@@ -25,4 +26,12 @@ function update(id, changes) {
     return db('categories')
         .where({ id })
         .update(changes, '*')
+}
+
+//Removes a single category by id
+
+function remove(id) {
+    return db('categories')
+        .where({ id })
+        .del();
 }
