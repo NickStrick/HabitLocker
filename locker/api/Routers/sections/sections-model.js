@@ -16,7 +16,7 @@ function add(section) {
         .insert(section, '*')
 }
 
-//Updates a single category
+//Updates a single section
 
 function update(id, changes) {
     return db('sections')
@@ -24,7 +24,7 @@ function update(id, changes) {
         .update(changes, '*')
 }
 
-//Removes a single category by id
+//Removes a single section by id
 
 function remove(id) {
     return db('sections')

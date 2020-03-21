@@ -28,3 +28,19 @@ function add(post) {
     return db('posts')
         .insert(post, '*')
 }
+
+//Updates a single post
+
+function update(id, changes) {
+    return db('sections')
+        .where({ id })
+        .update(changes, '*')
+}
+
+//Removes a single post by id
+
+function remove(id) {
+    return db('sections')
+        .where({ id })
+        .del();
+}
