@@ -10,3 +10,8 @@ function getSectionsByCat(id) {
     return query
         .where('category', id)
 }
+
+function add(section) {
+    return db('sections')
+        .insert(section, '*')
+}
