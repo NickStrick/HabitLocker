@@ -23,3 +23,8 @@ function getPostsBySection(id) {
     return query
         .where('section', id)
 }
+
+function add(post) {
+    return db('posts')
+        .insert(post, '*')
+}
