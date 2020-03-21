@@ -2,7 +2,10 @@ const db = require('../../../data/dbConfig.js');
 
 module.exports = {
     getPosts,
-    getPostsBySection
+    getPostsBySection,
+    add,
+    update,
+    remove
 }
 
 function getPosts(id) {
@@ -32,7 +35,7 @@ function add(post) {
 //Updates a single post
 
 function update(id, changes) {
-    return db('sections')
+    return db('posts')
         .where({ id })
         .update(changes, '*')
 }
@@ -40,7 +43,7 @@ function update(id, changes) {
 //Removes a single post by id
 
 function remove(id) {
-    return db('sections')
+    return db('posts')
         .where({ id })
         .del();
 }

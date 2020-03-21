@@ -1,7 +1,10 @@
 const db = require('../../../data/dbConfig.js');
 
 module.exports = {
-    getSectionsByCat
+    getSectionsByCat,
+    add,
+    update,
+    remove
 }
 
 function getSectionsByCat(id) {

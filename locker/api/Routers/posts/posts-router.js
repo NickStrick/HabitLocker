@@ -8,6 +8,7 @@ module.exports = router;
 router.get('/', getPosts);
 router.get('/id/:id', getPostsById);
 router.get('/:section', getPostsBySec);
+router.post('/', addPost);
 
 //Get All Posts.
 function getPosts(req, res) {
@@ -52,4 +53,14 @@ function getPostsBySec(req, res) {
         .catch(err => {
             res.status(500).json(err)
         })
+}
+
+function addPost(req, res) {
+    let cargo = req.body
+
+    db.add(cargo)
+        .then(result => {
+            res.status(200).json(result)
+        })
+        .catch(err => res.status(500).json(err))
 }
