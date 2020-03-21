@@ -3,6 +3,7 @@ const db = require('../../../data/dbConfig.js');
 module.exports = {
     getCategoriesByUser,
     add,
+    update,
 }
 
 function getCategoriesByUser(id) {
@@ -16,4 +17,12 @@ function getCategoriesByUser(id) {
 function add(category) {
     return db('categories')
         .insert(category, '*')
+}
+
+//Updates a single category
+
+function update(id, changes) {
+    return db('categories')
+        .where({ id })
+        .update(changes, '*')
 }
