@@ -6,6 +6,7 @@ module.exports = router;
 
 router.get('/:user_id', getCategories);
 router.post('/:user_id', addCategory);
+router.delete('/:id', deleteCategory);
 
 function getCategories(req, res) {
     let { user_id } = req.params;
@@ -27,6 +28,16 @@ function addCategory(req, res) {
     let cargo = req.body
 
     db.add(cargo)
+        .then(result => {
+            res.status(200).json(result)
+        })
+        .catch(err => res.status(500).json(err))
+}
+
+function deleteCategory(req, res) {
+    let { id } = req.params;
+
+    db.remove(id)
         .then(result => {
             res.status(200).json(result)
         })
