@@ -32,3 +32,14 @@ function addCategory(req, res) {
         })
         .catch(err => res.status(500).json(err))
 }
+
+function removeCategory(req, res) {
+    let {id} = req.params
+
+    db.remove(id)
+        .then(result => {
+            res.status(200).json(result)
+        })
+        .catch(err => res.status(500).json(err))
+
+}
