@@ -6,6 +6,7 @@ module.exports = router;
 
 //routes
 router.get('/:category', getSections);
+router.post('/', addSection);
 
 function getSections(req, res) {
     let { category } = req.params;
@@ -21,4 +22,25 @@ function getSections(req, res) {
         .catch(err => {
             res.status(500).json(err)
         })
+}
+
+function addSection(req, res) {
+    let cargo = req.body
+
+    db.add(cargo)
+        .then(result => {
+            res.status(200).json(result)
+        })
+        .catch(err => res.status(500).json(err))
+}
+
+function removeSection(req, res) {
+    let {id} = req.params
+
+    db.remove(id)
+        .then(result => {
+            res.status(200).json(result)
+        })
+        .catch(err => res.status(500).json(err))
+
 }
