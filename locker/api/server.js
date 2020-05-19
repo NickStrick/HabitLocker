@@ -15,7 +15,7 @@ server.use(express.json());
 
 //routes
 server.use("/posts", postsRouter);
-server.use("/section", sectionRouter);
+server.use("/sections", sectionRouter);
 server.use("/category", categoryRouter);
 
 server.get('/', (req, res) => {
