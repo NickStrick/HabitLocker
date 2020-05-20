@@ -8,6 +8,7 @@ module.exports = router;
 router.get('/', getPosts);
 router.get('/id/:id', getPostsById);
 router.get('/:section', getPostsBySec);
+router.delete('/:id', removePost);
 
 //Get All Posts.
 function getPosts(req, res) {
@@ -52,4 +53,15 @@ function getPostsBySec(req, res) {
         .catch(err => {
             res.status(500).json(err)
         })
+}
+
+function removePost(req, res) {
+    let {id} = req.params
+
+    db.remove(id)
+        .then(result => {
+            res.status(200).json(result)
+        })
+        .catch(err => res.status(500).json(err))
+
 }

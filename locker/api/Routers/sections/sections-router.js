@@ -7,6 +7,7 @@ module.exports = router;
 //routes
 router.get('/:category', getSections);
 router.post('/', addSection);
+router.delete('/:id', removeSection);
 
 function getSections(req, res) {
     let { category } = req.params;
