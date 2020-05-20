@@ -6,7 +6,7 @@ module.exports = router;
 
 //routes
 router.get('/:category', getSections);
-router.post('/', addSection);
+router.post('/:category', addSection);
 router.delete('/:id', removeSection);
 
 function getSections(req, res) {
@@ -26,7 +26,8 @@ function getSections(req, res) {
 }
 
 function addSection(req, res) {
-    let cargo = req.body
+    // let {name, category=req.params.category} = req.body
+    let cargo = {category:req.params.category, ...req.body}
 
     db.add(cargo)
         .then(result => {

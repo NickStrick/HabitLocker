@@ -2,7 +2,10 @@ const db = require('../../../data/dbConfig.js');
 
 module.exports = {
     getPosts,
-    getPostsBySection
+    getPostsBySection,
+    add,
+    remove, 
+    update
 }
 
 function getPosts(id) {
