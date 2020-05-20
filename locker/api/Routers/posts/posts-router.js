@@ -6,6 +6,7 @@ module.exports = router;
 
 //routes
 router.get('/', getPosts);
+router.post('/', addPost);
 router.get('/id/:id', getPostsById);
 router.get('/:section', getPostsBySec);
 router.delete('/:id', removePost);
@@ -53,6 +54,16 @@ function getPostsBySec(req, res) {
         .catch(err => {
             res.status(500).json(err)
         })
+}
+
+function addPost(req, res) {
+    let cargo = req.body
+
+    db.add(cargo)
+        .then(result => {
+            res.status(200).json(result)
+        })
+        .catch(err => res.status(500).json(err))
 }
 
 function removePost(req, res) {
