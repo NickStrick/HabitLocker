@@ -6,6 +6,7 @@ module.exports = router;
 
 router.get('/:user_id', getCategories);
 router.post('/:user_id', addCategory);
+router.delete('/:id', removeCategory);
 
 function getCategories(req, res) {
     let { user_id } = req.params;
