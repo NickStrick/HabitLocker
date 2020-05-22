@@ -10,24 +10,24 @@ import NavBelt from './components/NavBelt/NavBelt.js';
 import Home from './components/Home/Home.js';
 
 function App() {
-  const [getData, setData] = useState();
+  const [categoryData, setData] = useState([{name:'loading'}]);
   
   useEffect(() => {
     const fetchData = async () => {
       const result = await axios(
-        `${process.env.BACKEND_URL}/category/1`,
+        `${process.env.REACT_APP_BACKEND_URL}/category/1`,
       );
  
       setData(result.data);
     };
  
     fetchData();
-  });
-  console.log(getData)
+  },[]);
+  console.log(categoryData, process.env.REACT_APP_BACKEND_URL)
   return (
     <div className="App">
       <NavBar />
-      <NavBelt />
+      <NavBelt categoryData={categoryData} />
       <div className='container'>
         <div className='sidegap'></div>
         <div className='page-content'>

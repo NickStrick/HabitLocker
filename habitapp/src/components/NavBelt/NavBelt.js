@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './NavBelt.scss';
 import NavInfo from './NavInfo.js';
 
-const NavBelt = () => {
+const NavBelt = (props) => {
 
     const [pinText, setPinText] = useState('down');
     const [scrollNum, setScroll] = useState(window.scrollY);
@@ -33,6 +33,15 @@ const NavBelt = () => {
 
     return (
         <div className={`NavBelt ${pinText}`}>
+            {props.categoryData.map((catObj) => {
+                return (
+                    <div className='category'>
+                        <h2>{catObj.name}</h2>
+                        <div className={`section ${catObj.name}`}>
+                            <NavInfo items={['nicewowee']} />
+                        </div>
+                    </div>)
+            })}
             <div className='category'>
                 <h2>Planning</h2>
                 <div className='section'>
