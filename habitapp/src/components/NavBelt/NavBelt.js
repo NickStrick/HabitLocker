@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './NavBelt.scss';
-import NavInfo from './NavInfo.js';
+import NavSections from './NavSections.js';
 
 const NavBelt = (props) => {
 
@@ -37,15 +37,15 @@ const NavBelt = (props) => {
                 return (
                     <div className='category'>
                         <h2>{catObj.name}</h2>
-                        <div className={`section ${catObj.name}`}>
-                            <NavInfo items={['nicewowee']} />
+                        <div className={`section ${catObj.name} ${catObj.id}`} key={catObj.id}>
+                            <NavSections catId={catObj.id} />
                         </div>
                     </div>)
             })}
-            <div className='category'>
+            {/* <div className='category'>
                 <h2>Planning</h2>
                 <div className='section'>
-                    <NavInfo items={dailysections} />
+                    <NavSections items={dailysections} />
                 </div>
             </div>
             <div className='category'>
@@ -59,7 +59,7 @@ const NavBelt = (props) => {
             <div className='category'>
                 <h2>Custom</h2>
                 <div className='section'></div>
-            </div>
+            </div> */}
         </div>
     );
 }
