@@ -12,8 +12,10 @@ const NavInfo = (props) => {
      
           setSections(result.data);
         };
-     
-        fetchData();
+        if (props.catId){
+            fetchData();
+        }
+        
       },[]);
 
     console.log(sectionList)
