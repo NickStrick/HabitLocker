@@ -18,14 +18,14 @@ const NavInfo = (props) => {
         
       },[]);
 
-    console.log(sectionList)
+    if (sectionList) {console.log(sectionList)}
     return (
         <div className="nav-info">
-            {/* {props.items.map((item) => {
-                return (
-                    <p>{item}</p>
-                )
-            })} */}
+            {
+                sectionList && sectionList.map((item) => {
+                return <p key={item.id}>{item.name}</p>
+                })
+            }
         </div>
     );
 }
