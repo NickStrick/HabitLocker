@@ -35,7 +35,7 @@ const NavBelt = (props) => {
         <div className={`NavBelt ${pinText}`}>
             {props.categoryData.map((catObj) => {
                 return (
-                    <div className='category'>
+                    <div className='category' key={catObj.id}>
                         <h2>{catObj.name}</h2>
                         <div className={`section ${catObj.name} ${catObj.id}`} key={catObj.id}>
                             <NavSections catId={catObj.id} />
