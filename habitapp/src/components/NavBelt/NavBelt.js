@@ -29,8 +29,6 @@ const NavBelt = (props) => {
     });
 
 
-    let dailysections = ['carrer', 'personal', 'relation', 'iterrelation', 'foods']
-
     return (
         <div className={`NavBelt ${pinText}`}>
             {props.categoryData.map((catObj) => {
