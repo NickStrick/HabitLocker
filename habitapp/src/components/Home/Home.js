@@ -1,12 +1,13 @@
 import React from 'react';
 import './Home.scss';
+import PostsPage from '../Posts/PostsPage.js'
 
 const Home = (props) => {
 
 
     return (
         <div className="Home">
-            <p>qoq</p>
+            <PostsPage />
 
         </div>
     );
