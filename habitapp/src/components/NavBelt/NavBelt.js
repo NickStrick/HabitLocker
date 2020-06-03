@@ -40,24 +40,7 @@ const NavBelt = (props) => {
                         </div>
                     </div>)
             })}
-            {/* <div className='category'>
-                <h2>Planning</h2>
-                <div className='section'>
-                    <NavSections items={dailysections} />
-                </div>
-            </div>
-            <div className='category'>
-                <h2>Daily</h2>
-                <div className='section'></div>
-            </div>
-            <div className='category'>
-                <h2>Monthly</h2>
-                <div className='section'></div>
-            </div>
-            <div className='category'>
-                <h2>Custom</h2>
-                <div className='section'></div>
-            </div> */}
+
         </div>
     );
 }
